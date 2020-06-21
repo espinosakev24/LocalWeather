@@ -25,6 +25,8 @@ function handlePermission() {
 	navigator.permissions.query({name: 'geolocation'}).then(function(result) {
 		if (result.state === 'prompt') {
 			getGeoLocation();
+		} else if (result.state === 'granted') {
+			getGeoLocation();
 		}
 	})
 }
